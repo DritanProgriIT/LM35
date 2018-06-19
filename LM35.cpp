@@ -1,15 +1,16 @@
-//ven 20 mar 2015 23:35:36 CET 
+mer 20 giu 2018 01:01:06 CEST  
 
 #include <Arduino.h>
 #include <LM35.h>
 
-LM35::LM35(int pin, int risBit )
+LM35::LM35(int pin,float vPin, int risBit )
 {
-   _val = analogRead(pin);
-   _risBit = risBit;
+   	_val = analogRead(pin);
+   	_risBit = risBit;
+	_vPin = vPin
 }
 
 float LM35::getTemp(void)
 {
-   return 10/1000*5 * _val / pow(2,_risBit);
+   return 10 / 1000 * _vPin * _val / pow(2,_risBit);
 }
