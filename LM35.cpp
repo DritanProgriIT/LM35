@@ -12,5 +12,5 @@ LM35::LM35(int pin,float vPin, int risBit )
 
 float LM35::getTemp(void)
 {
-   return 10 / 1000 * _vPin * _val / pow(2,_risBit);
+   return (0,01 * _vPin * _val / pow(2,_risBit));
 }
